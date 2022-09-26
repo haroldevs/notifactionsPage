@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: hsl(210, 60%, 98%);
+}
+
+
+.grid-container{
+    max-width: 600px;
+    height: 90vh;
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px;
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.144);
+    font-size: 16px;
+    display: grid;
+    grid-template-areas: "header" "main" ;
+    /* grid-template-rows: 4rem auto; */
+    grid-template-rows: 1fr 12fr;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    grid-area: header;
+}
+
+.header .badge{
+    background-color: hsl(219, 85%, 26%);
+    color: hsl(0, 0%, 100%);
+    font-size: .7em;
+    padding: 0px 12px;
+    border-radius: 6px;
+}
+
+
+h1{
+    font-size: 1.5rem;
+}
+
+
+.header a{
+    justify-self: end;
+    color: hsl(219, 14%, 63%);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.header a:hover{
+    color: hsl(219, 85%, 26%);
+    
+}
+
+.main{
+    grid-area: main;
+    display: grid;
+    gap: 10px;
+    align-content: flex-start;
+}
+
+.main .card{
+    height: auto;
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-areas: "avatar content" ;
+    font-size: .9rem;
+    gap: 1rem;
+    
+}
+.photo{
+    width: 45px;
+}
+
+.main .card .avatar{
+    grid-area: avatar;
+}
+
+
+.main .card .content{
+    grid-area: "content";
+}
+
+.main .card .time{
+    grid-area: time;
+    color: hsl(219, 14%, 63%);
+}
+
+@media (min-width:600px){
+    .grid-container{
+        margin: 40px auto;
+        border-radius: 20px;
+        padding: 30px;
+    }
+    h1{
+        font-size: 2em;
+    }
+
+    .main{
+        gap: 20px;
+    }
+}
